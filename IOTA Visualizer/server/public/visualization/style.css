@@ -1,0 +1,93 @@
+/*for header*/
+
+body{
+  margin: 0;
+  font-family: "Times New Roman" !important;
+}
+
+.normal_width{
+  width: 100%;
+  margin: auto;
+}
+
+#header{
+  width: 100%;
+  height: 86px;
+  background-color: #333;
+}
+#header a{
+  text-decoration: none;
+}
+
+#header img{
+  padding-top: 10px;
+  height: 67px;
+  position: absolute;
+  left: 25px;
+
+}
+
+.nav_bar{
+  padding-top: 30px;
+  float: right;
+}
+
+.nav_bar li{
+  float: left;
+  margin: 0px 30px;
+}
+
+.nav_bar .current{
+  color: #c0c0c0;
+}
+
+.nav_bar li a{
+  font: 26px "Times New Roman";
+  color: white;
+}
+body {
+  font-family: Helvetica Neue, Arial, sans-serif;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 3em;
+  margin: 0 0 0.1em 0;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 0.9em;
+  margin: 0 0 50px;
+  color: #999;
+}
+
+a {
+  /*margin-top: 50px;*/
+  display: block;
+  color: #3e95cd;
+}
+
+#footer{
+  margin-top: 20px;
+  height: 60px;
+  width: 100%;
+  background: #333;
+  border-top: 10px solid #4c4c4c;
+  padding-top: 20px;
+  color: white;
+  line-height: 1.5;
+}
+#footer .copy{
+  float: right;
+}
+
+button{
+  font-family: "Times New Roman";
+}

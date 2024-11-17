@@ -1,0 +1,361 @@
+
+.clearfix:before,
+.clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body{
+  background-color: black;
+}
+
+/*for header*/
+
+.normal_width{
+  width: 100%;
+  margin: auto;
+}
+
+#header{
+  width: 100%;
+  height: 86px;
+  background-color: #333;
+}
+
+
+#header img{
+  padding-top: 10px;
+  height: 67px;
+}
+
+.nav_bar{
+  padding-top: 30px;
+  float: right;
+}
+
+.nav_bar li{
+  float: left;
+  margin: 0px 30px;
+}
+
+.nav_bar .current{
+  color: #c0c0c0;
+}
+
+.nav_bar li a{
+  font: 26px "Times New Roman";
+  color: white;
+}
+
+/*------------------------------------------------------------------------*/
+/*for node map*/
+#node_map{
+  height: 750px;
+  position: relative;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #404040;
+  overflow: hidden;
+}
+
+#node_map .all{
+  position: absolute;
+  top: 0px;
+  height: 100%;
+}
+
+#node_map .Home{
+  height: 100%;
+}
+
+#node_map .Discussion{
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  font-family: "Times New Roman";
+  line-height: 1.5;
+}
+
+#node_map .Discussion p{
+  padding: 30px 10px;
+}
+
+#node_map .Members{
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  font-family: "Times New Roman";
+  line-height: 1.5;
+}
+
+#node_map .Members .name{
+  font: bold 30px "Times New Roman";
+  color: white;
+
+}
+
+#node_map #main_for_show{
+  width: 100%;
+  height: 100%;
+}
+
+#node_map .right-top{
+  position: absolute;
+  top: 2%;
+  font-family: "Times New Roman";
+}
+
+#node_map .right-top div{
+  margin: 10px 10px;
+  font-size: 20px;
+  color: white;
+  position: relative;
+}
+
+.left-top img{
+  height: 20px;
+  width: 20px;
+}
+#node_map .left-top{
+  position: absolute;
+  left: 2%;
+  top: 3%;
+  color: white;
+  font-size: 20px;
+  font-family: "Times New Roman";
+}
+#node_map .left-top div{
+  padding-top: 5px;
+}
+
+#right_bottom{
+  position: absolute;
+  left: 80%;
+  top: 95%;
+  color: white;
+  font-size: 100%;
+}
+
+/*---------------------------------------------------------------------------*/
+/*for information*/
+#information{
+  padding-bottom: 115px;
+  border-bottom: 1px solid #404040;
+  height: 100px;
+/*  background-color: white;*/
+}
+
+#information div{
+  height: 100px;
+  width: 25%;
+  float: right;
+  position: relative;
+}
+
+#information{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#information span{
+  color: white;
+  font-size: 120%;
+  font-family: "Times New Roman";
+}
+
+#information img{
+  height: 80px;
+  width: 80px;
+  position: relative;
+  left: 5%;
+  top: 13%;
+}
+
+#information span{
+  position: absolute;
+  left: 35%;
+  top: 10px;
+  font-weight: bold;
+}
+
+#information .num{
+  color: skyblue;
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute;
+  left: 35%;
+  top: 40px;
+  font-family: "Times New Roman";
+}
+
+#milestone{
+  display: block;
+  position: relative !important;
+  top: -60% !important;
+  width: 220px;
+  font-size: 15px !important;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+/*#milestone:hover{*/
+  /*overflow: auto;*/
+/*}*/
+
+/*-------------------------------------------------------------------------------------*/
+/*for table*/
+#table{
+  background-color: black;
+  margin-bottom: 20px;
+}
+
+#table table{
+  width: 99.9%;
+  border-collapse: collapse;
+  table-layout:fixed;
+  word-break: break-all;
+}
+
+tr{
+  font: 30px "Times New Roman";
+  color: white;
+}
+
+td{
+  font: 20px "Times New Roman";
+  color: lightgrey;
+}
+
+td, th{
+  border: 1px solid white;
+  text-align: center;
+}
+
+tr:hover{
+  background-color: #5d5d5d;
+}
+
+/*-------------------------------------------------------------------------*/
+/*for footer*/
+#footer{
+  height: 80px;
+  width: 100%;
+  background: #333;
+  border-top: 10px solid #4c4c4c;
+  padding-top: 20px;
+  color: white;
+  line-height: 1.5;
+}
+#footer .copy{
+  float: right;
+}
+
+/*for search hash and address----------------------------------------------------*/
+.form-style-4{
+  width: 450px;
+  font-size: 16px;
+  position: relative;
+  left: 3%;
+}
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button],
+.form-style-4 input[type=text],
+.form-style-4 input[type=email],
+.form-style-4 textarea,
+.form-style-4 label
+{
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #fff;
+
+}
+.form-style-4 label {
+  display:block;
+  margin-bottom: 10px;
+}
+.form-style-4 label > span{
+  display: inline-block;
+  float: left;
+  width: 150px;
+}
+.form-style-4 input[type=text],
+.form-style-4 input[type=email]
+{
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #83A4C5;
+  width: 200px;
+  outline: none;
+  padding: 0px 0px 0px 0px;
+  font-style: italic;
+}
+.form-style-4 textarea{
+  font-style: italic;
+  padding: 0px 0px 0px 0px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px dashed #83A4C5;
+  width: 275px;
+  overflow: hidden;
+  resize:none;
+  height:20px;
+}
+
+.form-style-4 textarea:focus,
+.form-style-4 input[type=text]:focus,
+.form-style-4 input[type=email]:focus,
+.form-style-4 input[type=email] :focus
+{
+  border-bottom: 1px dashed #D9FFA9;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button]{
+  background: #576E86;
+  border: none;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  color: #A8BACE;
+}
+.form-style-4 input[type=submit]:hover,
+.form-style-4 input[type=button]:hover{
+  background: #394D61;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 20px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 20px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 20px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 20px;
+}
+
+#search_hash_this, #search_hash{
+  margin-top: 5px;
+}
+
+
+.loader {
+  border: 4px solid grey; /* Light grey */
+  border-top: 4px solid white; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#specific{
+  top: 50px !important;
+}

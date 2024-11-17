@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IOTA price</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="day_chart.js"></script>
+    <script type="text/javascript" src="min_chart.js"></script>
+    <script type = "text/javascript" src="confirm_time_chart.js"></script>
+    <script type = "text/javascript" src="value_ps_chart.js"></script>
+    <script type = "text/javascript" src="value_pt_chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      #home{
+        float: right ;
+      }
+
+      #home a{
+        color: black ;
+        font-size: 30px ;
+        text-decoration: none;
+        margin-top: -30%;
+      }
+
+      #home a:hover{
+        color:grey;
+      }
+    </style>
+  </head>
+  <body>
+  <!-- all contents in header-->
+  <div id="header">
+    <div id="header2" class ="normal_width">
+      <ul class="nav_bar">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/search">Search Hash/Address</a>
+        </li>
+        <li>
+          <a href="/visualization" class = "current">Visualization</a>
+        </li>
+      </ul>
+      <div class="img">
+        <img src="../img/logo.png" alt="IOTA logo" id="my_img">
+      </div>
+    </div>
+  </div>
+    <div class="wrapper">
+      <h1>IOTA Data Statistics Visualization</h1>
+      <h2>show in GBP</h2>
+      <canvas id="Chart" width="1600" height="900"></canvas>
+    </div>
+  <script type="text/javascript" src="./for_main.js"></script>
+    <button id = "btn_day">day</button>
+    <button id = "btn_min">min</button>
+    <button id = "btn_mean_con_time">mean confirmation time</button>
+    <button id = "btn_val_ps">value per second</button>
+    <button id = "btn_val_pt">value per transaction</button>
+    <script>
+      $("#btn_min").click(function(){
+          minChart();
+      });
+    </script>
+    <script>
+      $("#btn_day").click(function(){
+          dayChart();
+      });
+    </script>
+    <script>
+    $("#btn_mean_con_time").click(function(){
+        mean_con_time_chart();
+    });
+    </script>
+    <script>
+    $("#btn_val_ps").click(function(){
+        value_ps_chart();
+    });
+    </script>
+    <script>
+    $("#btn_val_pt").click(function(){
+        value_pt_chart();
+    });
+    </script>
+    <!-- <script src="cc.js"></script> -->
+
+  <!--footer-->
+  <div id="footer">
+    <div class="normal_width">
+      <p class="copy">Copyright 2017. IOTA group project . All Rights Reserved.</p>
+    </div>
+  </div>
+
+  </body>
+</html>

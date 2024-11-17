@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>IOTA Node Visualizer</title>
+  <script type="text/javascript" src="helpers/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="helpers/tools.js"></script>
+  <link rel="stylesheet" href="./stylesheets/for_index.css">
+  <link rel="stylesheet" href="./stylesheets/styles.css">
+  <link rel="stylesheet" href="./stylesheets/simple-switch.min.css">
+  <script type="text/javascript" src="./helpers/jquery.simpleswitch.min.js"></script>
+  <script type="text/javascript" src="helpers/for_index.js"></script>
+
+  <script type="text/javascript" src="helpers/vis.js"></script>
+  <link type="text/css" rel="stylesheet" href="./stylesheets/vis-network.min.css">
+
+</head>
+
+<body class="normal_width">
+  <!-- all contents in header-->
+  <div id="header">
+    <div id="header2" class ="normal_width">
+      <ul class="nav_bar">
+        <li>
+          <a href="/" class="current">Home</a>
+        </li>
+        <li>
+          <a href="/search">Search Hash/Address</a>
+        </li>
+        <li>
+          <a href="/visualization">Visualization</a>
+        </li>
+      </ul>
+      <div class="img">
+        <img src="img/logo.png" alt="IOTA logo">
+      </div>
+    </div>
+  </div>
+
+  <!-- the whole area for node_map (including three parts according to headers) -->
+  <div id="node_map" class ="normal_width">
+    <canvas id="space" class="normal_width" style="height: 100%;"></canvas>
+    <div class="loader"></div>
+    <a href="#" id="warp"></a>
+    <div class="all">
+      <div class="Home normal_width">
+
+        <div id="main_for_show"></div>
+        <div class="right-top">
+          <div>
+            <input id = "graphmode" type="checkbox" class="mybox"/>
+            Toggle Graph Mode
+          </div>
+          <div>
+          <input id = "search_click" type="checkbox" class="mybox"/>
+          Click Node To Search
+          </div>
+          <div>
+            <input id = "add_all_new" type="checkbox" class="mybox"/>
+            Add All Connected Nodes
+          </div>
+          <div>
+            <input id = "remove_all_zero" type="checkbox" class="mybox"/>
+            Remove Zero-Value Nodes
+          </div>
+          <form class="form-style-4">
+            <label>
+              <input type="text" name="field1" required="true" placeholder="Search Hash" /><br>
+              <input id="search_hash" type="submit" value="Search details" />
+              <input id="search_hash_this" type="submit" value="Search in this graph" />
+            </label>
+          </form>
+          <form class="form-style-4">
+            <label>
+              <input type="text" name="field1" required="true" placeholder="Search Address" />
+              <input id="search_address" type="submit" value="Search" />
+            </label>
+          </form>
+        </div>
+
+        <div class="left-top" >
+          <div>
+            <img src="img/for_unconfirmed.png" alt="">
+            Unconfirmed
+          </div>
+          <div>
+            <img src="img/for_confirmed.jpg" alt="">
+            Confirmed
+          </div>
+          <div>
+            <img src="img/for_tip.jpg" alt="">
+            Tips
+          </div>
+          <div>
+            <img src="img/for_new.JPG" alt="">
+            Just Added
+          </div>
+          <div>
+            <img src="img/for_search.png" alt="">
+            Searched
+          </div>
+        </div>
+      </div>
+
+      <div class="Discussion normal_width">
+        <p>IOTA is an open-source distributed ledger (cryptocurrency) focused on providing
+        secure communications and payments between machines on the Internet of Things.
+        Using directed acyclic graph (DAG) technology instead of the traditional blockchain,
+        IOTA's transactions are free regardless of the size of the transaction, confirmation
+        times are fast, the number of transactions the system can handle simultaneously is
+        unlimited, and the system can easily scale.[2][3] IOTA was founded in 2015 by David
+        Sønstebø, Sergey Ivancheglo, Dominik Schiener, and Dr. Serguei Popov.[4][5]
+        IOTA has a collaboration with Deutsche Telekom, Microsoft, and Fujitsu,[6] the Foundation
+        opened up a data marketplace using IOTA technology.[7]</p>
+      </div>
+
+      <div class="Members normal_width">
+        <p><span class="name">Jiangbo Yu</span> -- most handsome man. He is so brilliant.</p>
+        <p><span class="name">Ao Shen</span></p>
+        <p><span class="name">Xiao Luo</span></p>
+        <p><span class="name">Yuxiang Wu</span></p>
+        <p><span class="name">Dongxiao Huang</span></p>
+        <p><span class="name">Ruikun Cao</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- the area to show statistics in information area -->
+  <div id="information" class="normal_width">
+
+    <a href="/visualization?type=value_pt">
+      <div>
+        <img src="img/Transfer.png" alt="">
+        <span>Value / Transaction</span>
+        <span class="num">0</span>
+      </div>
+    </a>
+
+    <a href="/visualization?type=day">
+    <div>
+        <img src="img/pound.png" alt="">
+        <span>GBP Price / MIOTA</span>
+        <span class="num">0</span>
+    </div>
+    </a>
+
+    <a href="/visualization?type=value_ps">
+    <div>
+      <img src="img/data_show.png" alt="">
+      <span>Value Transferred / Hour</span>
+      <span class="num">0</span>
+    </div>
+    </a>
+
+    <a href="/visualization?type=mean_con_time">
+    <div>
+      <img src="img/Time.png" alt="">
+      <span>Mean Confirm Time (Min)</span>
+      <span class="num" id="specific">0</span>
+    </div>
+    </a>
+
+    <div>
+      <img src="img/tip.png" alt="">
+      <span>Tips</span>
+      <span class="num">0</span>
+    </div>
+
+    <div>
+      <img src="img/server.png" alt="">
+      <span>IOTA Servers</span>
+      <span class="num">2</span>
+    </div>
+
+    <div>
+      <img src="img/milestone.png" alt="">
+      <span>Latest Solid MileStone</span>
+      <p class="num" id="milestone">0</p>
+    </div>
+
+    <div>
+      <img src="img/none.png" alt="">
+      <span>None Zero %</span>
+      <span class="num">0</span>
+    </div>
+  </div>
+
+  <!-- the area to show the table -->
+  <div id="table" class="normal_width">
+    <table>
+      <thead>
+        <tr>
+          <th>Hash</th>
+          <th>Node Type</th>
+          <th>Value</th>
+          <th>Create Time</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr class="item">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--footer-->
+  <div id="footer">
+    <div class="normal_width">
+      <p class="copy">Copyright 2017. IOTA group project . All Rights Reserved.</p>
+    </div>
+  </div>
+
+  <!-- this is to show the background of node map -->
+  <script type="text/javascript" src="helpers/back.js"></script>
+
+<!-- 这是nodemap上的那几个按钮 -->
+  <script>
+    $(".mybox").simpleSwitch();
+  </script>
+
+  <script type="text/javascript">
+    //auto expand textarea
+    function adjust_textarea(h) {
+      h.style.height = "20px";
+      h.style.height = (h.scrollHeight)+"px";
+    }
+  </script>
+  <!--use vis.helpers library to show our iota nodes-->
+  <script type="text/javascript" src="helpers/show_nodes.js"></script>
+
+
+</body>
+</html>
